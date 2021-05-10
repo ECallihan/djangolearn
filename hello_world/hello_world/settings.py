@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-v!ijd*5n&#(&0*a#t=l=%_9k0wp2spw-=cchi!@5g+)+yh!2+@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['52.14.78.34', 'localhost', '127.0.0.1', 'ec2-52-14-78-34.us-east-2.compute.amazonaws.com', 'pitchmusic.ddns.net']
+ALLOWED_HOSTS = ['52.14.78.34', 'localhost', '127.0.0.1',
+                 'ec2-52-14-78-34.us-east-2.compute.amazonaws.com', 'pitchmusic.ddns.net']
 
 
 # Application definition
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'hello_world.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'testdb',
+        'USER': 'dana',
+        'PASSWORD': 'pineapple9',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
 
